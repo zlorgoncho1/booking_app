@@ -1,183 +1,48 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking App - Accueil</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 20px;
-        }
-        header {
-            background: #333;
-            color: #fff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #0779e4 3px solid;
-        }
-        header a {
-            color: #fff;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
-        }
-        header ul {
-            padding: 0;
-            list-style: none;
-        }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
-        }
-        header #branding {
-            float: left;
-        }
-        header #branding h1 {
-            margin: 0;
-        }
-        header nav {
-            float: right;
-            margin-top: 10px;
-        }
-        #showcase {
-            min-height: 400px;
-            background: url('https://via.placeholder.com/1500x400?text=Salle+de+Conférence') no-repeat 0 -200px; /* Placeholder image */
-            background-position: center center;
-            background-size: cover;
-            text-align: center;
-            color: #fff;
-        }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px #000000;
-        }
-        #showcase p {
-            font-size: 20px;
-            text-shadow: 1px 1px 2px #000000;
-        }
-        .button {
-            height: 40px;
-            background: #0779e4;
-            border: none;
-            padding-left: 20px;
-            padding-right: 20px;
-            color: #fff;
-            font-size: 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background: #0056b3;
-        }
-        #main-content {
-            padding: 20px;
-            background: #fff;
-            margin-top: 20px;
-            border-radius: 5px;
-        }
-        #main-content h2 {
-            text-align: center;
-            color: #333;
-        }
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-            text-align: center;
-        }
-        .feature-item {
-            flex-basis: 30%;
-        }
-        .feature-item img { /* Placeholder for icons */
-            width: 60px;
-            height: 60px;
-            margin-bottom: 10px;
-        }
-        footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #fff;
-            background-color: #333;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div id="branding">
-                <h1><span style="color: #0779e4;">Booking</span> App</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#">Accueil</a></li>
-                    <li><a href="#">Salles</a></li>
-                    <li><a href="#">Mes Réservations</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+{% extends "base.html" %}
 
-    <section id="showcase">
-        <div class="container">
-            <h1>Bienvenue sur Booking App</h1>
-            <p>Votre solution simple et efficace pour la gestion et la réservation de salles.</p>
-            <a href="#" class="button">Voir les salles disponibles</a>
-        </div>
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+<section id="showcase" class="bg-blue-500 text-white py-20">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">Bienvenue sur Booking App</h1>
+        <p class="text-lg mb-8">Votre solution simple et efficace pour la gestion et la réservation de salles.</p>
+        <a href="#" class="bg-white text-blue-500 font-bold py-3 px-6 rounded hover:bg-blue-100 transition duration-300">Voir les salles disponibles</a>
+    </div>
+</section>
+
+<div class="container mx-auto py-12">
+    <section id="main-content" class="text-center mb-12">
+        <h2 class="text-3xl font-semibold mb-6">Simplifiez la réservation de vos espaces</h2>
+        <p class="text-gray-700 leading-relaxed max-w-2xl mx-auto">
+            Que vous organisiez une réunion d'affaires, un séminaire, une formation ou un événement privé,
+            Booking App vous aide à trouver et réserver la salle parfaite en quelques clics.
+            Gérez vos réservations facilement et optimisez l'utilisation de vos espaces.
+        </p>
     </section>
 
-    <div class="container">
-        <section id="main-content">
-            <h2>Simplifiez la réservation de vos espaces</h2>
-            <p>
-                Que vous organisiez une réunion d'affaires, un séminaire, une formation ou un événement privé,
-                Booking App vous aide à trouver et réserver la salle parfaite en quelques clics.
-                Gérez vos réservations facilement et optimisez l'utilisation de vos espaces.
-            </p>
-
-            <div class="features">
-                <div class="feature-item">
-                    <img src="https://via.placeholder.com/60x60?text=📅" alt="Calendrier">
-                    <h3>Réservation Facile</h3>
-                    <p>Trouvez et réservez une salle en fonction de vos besoins et disponibilités.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="https://via.placeholder.com/60x60?text=⚙️" alt="Engrenage">
-                    <h3>Gestion Centralisée</h3>
-                    <p>Gérez toutes vos salles et réservations depuis un tableau de bord unique.</p>
-                </div>
-                <div class="feature-item">
-                    <img src="https://via.placeholder.com/60x60?text=🔔" alt="Cloche">
-                    <h3>Notifications</h3>
-                    <p>Recevez des rappels et des mises à jour concernant vos réservations.</p>
-                </div>
-            </div>
-            <div style="text-align:center; margin-top:30px;">
-                 <a href="#" class="button">Créer une réservation</a>
-                 <a href="#" class="button" style="background-color: #5cb85c;">Gérer mes réservations</a>
-            </div>
-        </section>
+    <div class="features grid md:grid-cols-3 gap-8 text-center">
+        <div class="feature-item bg-white p-6 rounded-lg shadow-lg">
+            <img src="https://via.placeholder.com/60x60?text=📅" alt="Calendrier" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Réservation Facile</h3>
+            <p class="text-gray-600">Trouvez et réservez une salle en fonction de vos besoins et disponibilités.</p>
+        </div>
+        <div class="feature-item bg-white p-6 rounded-lg shadow-lg">
+            <img src="https://via.placeholder.com/60x60?text=⚙️" alt="Engrenage" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Gestion Centralisée</h3>
+            <p class="text-gray-600">Gérez toutes vos salles et réservations depuis un tableau de bord unique.</p>
+        </div>
+        <div class="feature-item bg-white p-6 rounded-lg shadow-lg">
+            <img src="https://via.placeholder.com/60x60?text=🔔" alt="Cloche" class="mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2">Notifications</h3>
+            <p class="text-gray-600">Recevez des rappels et des mises à jour concernant vos réservations.</p>
+        </div>
     </div>
-
-    <footer>
-        <p>Booking App &copy; 2024. Tous droits réservés.</p>
-    </footer>
-</body>
-</html>
+    <div class="text-center mt-12">
+        <a href="{% url 'create_booking' %}" class="bg-blue-600 text-white font-bold py-3 px-6 rounded hover:bg-blue-700 transition duration-300 mr-4">Créer une réservation</a>
+        <a href="#" class="bg-green-500 text-white font-bold py-3 px-6 rounded hover:bg-green-600 transition duration-300">Gérer mes réservations</a>
+    </div>
+</div>
+{% endblock %}

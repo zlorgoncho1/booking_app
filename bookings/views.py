@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import BookingForm
 
 # Create your views here.
-@login_required
+# @login_required
 def create_booking(request):
     if request.method == "POST":
         form = BookingForm(request.POST)

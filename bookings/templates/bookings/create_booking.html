@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Créer une réservation
+{% endblock %}
+
+{% block content %}
+<section id="create-booking">
+    <div class="container">
+        <h2>Créer une réservation</h2>
+        <form method="POST">
+            {% csrf_token %}
+
+            <div class="form-group">
+                {{ form.date.label_tag }}
+            </div>
+
+            <div class="form-group">
+                
+            </div>
+
+            {% comment %} {{ form.as_p }} {% endcomment %}
+            <button type="submit">Créer</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

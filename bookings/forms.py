@@ -6,7 +6,27 @@ class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking
         fields = ["room", "date", "start_time", "end_time"]
-    
+        labels = {
+            "room": "Salle",
+            "date": "Date",
+            "start_time": "Heure de début",
+            "end_time": "Heure de fin"
+        }
+        help_texts = {
+            "room": "Sélectionnez la salle à réserver",
+            "date": "Sélectionnez la date de la réservation",
+            "start_time": "Sélectionnez l'heure de début de la réservation",
+            "end_time": "Sélectionnez l'heure de fin de la réservation"
+        }
+        widgets = {
+            "date": forms.DateInput(attrs={"type": "date"})
+        }
+        error_messages = {
+            "date": {
+                "invalid": "Date invalide"
+            }
+        }        
+            
     def clean(self): # Nettoyage
         cleaned_data = super().clean()
         room = cleaned_data.get('room')
